@@ -1,49 +1,55 @@
-JIIT Leaderboard
+# Competitive Coding Leaderboard
 
-JIIT Leaderboard is a web application that allows multiple users to compare their performance across popular competitive programming platforms such as CodeChef, CodeForces, GitHub, and HackerRank. It calculates scores, dynamically updates the leaderboard, and provides graphical insights for better data visualization.
+Welcome to the **Competitive Coding Leaderboard** – a platform designed to fairly rank users across different coding websites, regardless of their preferred platform.
 
-Features
+🔗 [Check it out here](https://competitive-coding-leaderboard.vercel.app)
 
-Multi-Platform Support: Compare performance across CodeChef, CodeForces, GitHub, and HackerRank.
-Dynamic Leaderboard: Scores are updated in real-time to reflect user performance.
-Graphical Visualization: Interactive charts and graphs for better insights.
-User-Friendly Interface: Built with React for a modern and seamless user experience.
-Tech Stack
+## Purpose
 
-Frontend: React.js
-Data Visualization: Chart.js
-Web Scraping: Cheerio
-HTTP Requests: Axios
-Additional Libraries: Open-source packages for enhanced functionality
-How It Works
+The goal is to create a unified space where users can compare their performance and activity across platforms like **LeetCode**, **Codeforces**, **CodeChef**, and **GitHub**. Each platform has unique metrics for evaluation:
 
-Data Retrieval: User data is fetched from supported platforms using APIs or web scraping.
-Score Calculation: Scores are computed based on predefined metrics.
-Leaderboard: A dynamic leaderboard displays users ranked by their scores.
-Graphical Insights: Data is visualized in an intuitive and interactive format using Chart.js.
-Installation
+- **LeetCode**: Total problems solved.
+- **Codeforces**: Contest rating.
+- **CodeChef**: Rating and stars.
+- **GitHub**: Public repositories showcasing contributions.
 
-Clone this repository:
-git clone https://github.com/Madan2468/jiit-leaderboard.git  
-cd jiit-leaderboard  
-Install dependencies:
-npm install  
-Start the development server:
-npm start  
-Open your browser and navigate to http://localhost:3000.
-Contributions
+To make this comparison even more insightful, a **statistical leaderboard** has been integrated, providing a visual representation of rankings and scores.
 
-Contributions are welcome! Feel free to open issues or submit pull requests to enhance functionality, fix bugs, or add new features.
+## Why Is This Useful?
 
-License
+1. **Unified Comparison**: No need to switch between platforms to gauge your progress—compare all in one place.
+2. **Cross-Platform Insights**: See how your competitive coding journey stacks up across various platforms.
+3. **Motivation**: Healthy competition can inspire you to improve and stay consistent.
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+## Tagline
 
-Acknowledgments
+**Compare platforms and score their performance.**
 
-Special thanks to the creators of Chart.js, Axios, and Cheerio for their fantastic open-source libraries.
+## Future Plans
 
+This is just the beginning! Future enhancements include:
+- Expanding the functionality by adding more platforms and metrics.
+- Improving the user experience.
+- Adding deeper insights into your performance trends.
+
+## How to Use
+
+1. Visit the [website](https://competitive-coding-leaderboard.vercel.app).
+2. Enter your username from any supported platform (LeetCode, Codeforces, CodeChef, or GitHub).
+3. View your rank and compare your performance across platforms.
+
+## Get Involved
+
+Feel free to fork the project, raise issues, and contribute to making this leaderboard even better! If you'd like to collaborate or provide feedback, I'd love to hear from you.
+
+---
+
+Thank you for checking out the **Competitive Coding Leaderboard**! Let's continue to improve, compete, and grow together. 💪
 
 UI:
-<img width="1469" alt="Screenshot 2024-12-20 at 9 42 23 PM" src="https://github.com/user-attachments/assets/ca050411-b9a3-402e-a5b4-8918340e1454" />
 
+<img width="1245" alt="Screenshot 2024-12-21 at 9 42 47 PM" src="https://github.com/user-attachments/assets/99cf73b5-57c8-42e5-b2b3-29fe56df523b" />
+
+<img width="1245" alt="Screenshot 2024-12-21 at 9 43 43 PM" src="https://github.com/user-attachments/assets/0d37e39a-7a74-4d90-8cd4-15ae1818d08e" />
+
+<img width="1245" alt="Screenshot 2024-12-21 at 9 46 20 PM" src="https://github.com/user-attachments/assets/3ee26bf9-a1e4-4f57-a42d-1c8991ddb284" />
