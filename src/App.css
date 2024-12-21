@@ -147,7 +147,7 @@ li {
   padding: 0.8em 1.2em;
   width: 100%;
   max-width: 400px; /* Slim and elegant */
-  background: linear-gradient(135deg, #4a5568, #2d3748); /* Sleek gradient */
+  background: linear-gradient(135deg, #4f5b6f, #374154); /* Sleek gradient */
   border: 2px solid rgba(255, 255, 255, 0.15); /* Inner subtle glow effect */
   border-radius: 10px; /* Soft corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25),
@@ -171,7 +171,7 @@ li:hover {
 li span.rank {
   font-size: 1rem;
   font-weight: bold;
-  color: #3182ce; /* Bright rank color */
+  color: white; /* Bright rank color */
   width: 35px;
   text-align: center;
 }
@@ -187,7 +187,7 @@ li strong {
 li a {
   font-size: 0.9rem;
   font-weight: bold;
-  color: #63b3ed; /* Bright link color */
+  color: white; /* Bright link color */
   text-decoration: none;
   transition: color 0.3s ease;
 }

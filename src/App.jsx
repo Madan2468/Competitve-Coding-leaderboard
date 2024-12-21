@@ -52,7 +52,8 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>JIIT Competitive Coding Leaderboard</h1>
+        <h1>Competitive Coding Leaderboard</h1>
+        <h6>Compare platforms and score their performance</h6>
       </header>
       <main className="App-main">
         <UserInput onSubmit={handleFetchLeaderboard} />
