@@ -1,6 +1,6 @@
 import React from "react";
 
-const LeaderboardEntry = ({ entry }) => {
+const LeaderboardEntry = ({ entry, onUserSelect }) => {
   const {
     name = "No name available",
     enrollmentNumber = "No enrollment number",
@@ -10,7 +10,10 @@ const LeaderboardEntry = ({ entry }) => {
   } = entry || {};
 
   return (
-    <li style={styles.entryContainer}>
+    <li
+      style={styles.entryContainer}
+      onClick={() => onUserSelect(entry)} // Add a click handler to trigger onUserSelect
+    >
       <div style={styles.rankContainer}>
         <div style={styles.rank}>{rank}</div>
       </div>
@@ -91,10 +94,6 @@ const styles = {
     color: "#007BFF",
     textDecoration: "none",
     transition: "color 0.3s ease",
-  },
-  entryHover: {
-    transform: "scale(1.05)",
-    boxShadow: "0 6px 12px rgba(0, 0, 0, 0.15)",
   },
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import LeaderboardEntry from "./LeaderboardEntry";
 
-const Leaderboard = ({ data }) => {
+const Leaderboard = ({ data, onUserSelect }) => {
   if (!Array.isArray(data)) {
     return (
       <p style={styles.error}>
@@ -22,6 +22,7 @@ const Leaderboard = ({ data }) => {
             <LeaderboardEntry
               key={entry.id || entry.enrollmentNumber || `entry-${index}`}
               entry={entry}
+              onUserSelect={onUserSelect} // Pass the onUserSelect function
             />
           ))}
         </ul>
