@@ -6,10 +6,15 @@
 }
 
 body {
-  font-family: "Courier New", monospace; /* Monospace font for coding theme */
+  font-family: "Inter", sans-serif; /* Modern and clean font */
   background: linear-gradient(135deg, #0d1117, #161b22); /* Dark background */
   color: #c9d1d9; /* Light text color */
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .App {
@@ -19,48 +24,46 @@ body {
   justify-content: center;
   min-height: 100vh;
   padding: 2em;
-  animation: fadeIn 1s ease-in-out; /* Animation for page loading */
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 .App-header {
-  background-color: rgba(
-    24,
-    24,
-    27,
-    0.9
-  ); /* Slightly darker header for focus */
+  background-color: rgba(24, 24, 27, 0.9);
   color: #58a6ff;
-  padding: 1.5em 0;
+  padding: 1.5em 2em;
   width: 100%;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-  animation: slideIn 1s ease-out;
-  font-size: 1.8rem;
+  font-size: 2rem;
   letter-spacing: 1px;
+  animation: slideIn 1s ease-out;
 }
 
 .App-main {
-  background-color: rgba(28, 32, 39, 0.9); /* Darker for better contrast */
+  background-color: rgba(28, 32, 39, 0.9);
   padding: 2em;
-  border-radius: 15px; /* Soft round edges for modern feel */
+  border-radius: 20px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
-  width: 100%;
+  width: 90%;
+  max-width: 900px;
   margin-top: 2em;
-  max-width: 900px; /* Slightly wider for spacious look */
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .App-main:hover {
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5); /* Interactive hover effect */
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: 1px;
   color: #58a6ff;
-  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.2); /* Subtle text shadow */
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 /* Heading Animation */
@@ -80,20 +83,20 @@ h1 {
   }
 }
 
-/* User Input & Button Styles */
+/* Input & Button Styles */
 input,
 button {
   padding: 12px 18px;
   margin-top: 1.5em;
   font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #58a6ff;
+  border-radius: 10px;
+  border: 2px solid #58a6ff;
   background-color: #0d1117;
   color: #c9d1d9;
   outline: none;
   transition: all 0.3s ease;
   width: 100%;
-  max-width: 350px; /* Align with minimalistic design */
+  max-width: 350px;
 }
 
 input:focus,
@@ -105,12 +108,12 @@ button:hover {
 
 /* Error and Loading Styles */
 .error-message {
-  color: red;
-  font-weight: bold;
+  color: #f85149;
+  font-weight: 600;
   margin: 1em 0;
-  padding: 0.8em;
-  border-radius: 5px;
-  background-color: rgba(255, 0, 0, 0.1);
+  padding: 1em;
+  border-radius: 8px;
+  background-color: rgba(248, 81, 73, 0.1);
 }
 
 .loading-spinner {
@@ -136,7 +139,7 @@ ul {
   margin: 2em 0;
   display: flex;
   flex-direction: column;
-  gap: 0.8em;
+  gap: 1em;
   align-items: center;
 }
 
@@ -144,56 +147,50 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.8em 1.2em;
+  padding: 1em 1.5em;
   width: 100%;
-  max-width: 400px; /* Slim and elegant */
-  background: linear-gradient(135deg, #4f5b6f, #374154); /* Sleek gradient */
-  border: 2px solid rgba(255, 255, 255, 0.15); /* Inner subtle glow effect */
-  border-radius: 10px; /* Soft corners */
+  max-width: 400px;
+  background: linear-gradient(135deg, #4f5b6f, #374154);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25),
-    /* Base shadow */ 0 0 10px 2px rgba(91, 144, 244, 0.6),
-    /* Outer glowing border */ 0 0 20px 5px rgba(91, 144, 244, 0.4); /* Amplified glow */
+    0 0 10px 2px rgba(91, 144, 244, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 li:hover {
-  transform: translateY(-5px); /* Noticeable lift */
+  transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4),
-    /* Enhanced shadow */ 0 0 15px 3px rgba(66, 153, 225, 0.8),
-    /* Stronger glowing border on hover */ 0 0 30px 10px rgba(66, 153, 225, 0.6); /* Amplified hover glow */
-  background: linear-gradient(
-    135deg,
-    #63b3ed,
-    #3182ce
-  ); /* Bright hover gradient */
+    0 0 15px 3px rgba(66, 153, 225, 0.8);
+  background: linear-gradient(135deg, #63b3ed, #3182ce);
 }
 
 li span.rank {
   font-size: 1rem;
-  font-weight: bold;
-  color: white; /* Bright rank color */
+  font-weight: 600;
+  color: #fff;
   width: 35px;
   text-align: center;
 }
 
 li strong {
-  font-size: 0.95rem;
-  font-weight: bold;
-  color: #e2e8f0; /* Brighter text */
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e2e8f0;
   margin-left: 10px;
-  flex-grow: 1; /* Push link to the right */
+  flex-grow: 1;
 }
 
 li a {
   font-size: 0.9rem;
   font-weight: bold;
-  color: white; /* Bright link color */
+  color: white;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 li a:hover {
-  color: #bee3f8; /* Elegant hover color for links */
+  color: #bee3f8;
   text-decoration: underline;
 }
 

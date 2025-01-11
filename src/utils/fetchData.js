@@ -17,7 +17,7 @@ const safeFetch = async (url, options = {}) => {
     const response = await axios.get(url, options);
     return response.data;
   } catch (error) {
-    console.error(`Error fetching ${url}:`, error);
+    console.error(`Error fetching ${url}:`, error.response?.data || error.message);
     return null;
   }
 };
@@ -52,16 +52,17 @@ const fetchDataFromLeetCode = async (username) => {
       rank: data.ranking || "Rank not available",
       score,
       website: 'LeetCode',
-      leaderboardStats: {
-        solved: data.totalSolved || 0,
-        rank: data.ranking || "Rank not available",
-      },
     };
   }
   return null;
 };
 
 const fetchDataFromCodeforces = async (username) => {
+  if (!username || typeof username !== 'string') {
+    console.error("Invalid username for Codeforces.");
+    return null;
+  }
+
   const url = `https://codeforces.com/api/user.info?handles=${username}`;
   const data = await safeFetch(url);
   if (data?.status === 'OK' && data.result.length > 0) {
@@ -73,37 +74,25 @@ const fetchDataFromCodeforces = async (username) => {
       rank: user.rank || "No rank available",
       score,
       website: 'Codeforces',
-      leaderboardStats: {
-        countryRank: user.countryRank || "Country rank not available",
-        contestParticipation: user.contestCount || "Participation data not available",
-      },
     };
   }
+  
+  // Handle 400 Bad Request or other errors
+  console.error(`Error fetching Codeforces data for ${username}: ${data?.comment || 'Unknown error'}`);
   return null;
 };
 
 const fetchDataFromCodechef = async (username) => {
   const url = `https://codechef-api.vercel.app/handle/${username}`;
   const data = await safeFetch(url);
-  if (data?.success) {
-    const score = calculateCodechefScore(data.currentRating || 0, data.stars || 0);
+  if (data?.status === 'success' && data.data) {
+    const score = calculateCodechefScore(data.data.rating || 0, data.data.stars || 0);
     return {
-      name: data.name || "Anonymous",
+      name: data.data.name || "Anonymous",
       enrollmentNumber: username,
-      profileUrl: data.profile || "Profile not available",
-      currentRating: data.currentRating || "Rating not available",
-      highestRating: data.highestRating || "Highest rating not available",
-      globalRank: data.globalRank || "Global rank not available",
-      countryRank: data.countryRank || "Country rank not available",
-      stars: data.stars || "Stars not available",
-      countryName: data.countryName || "Country not specified",
-      countryFlag: data.countryFlag || "Flag not available",
+      profileUrl: data.data.profile || "Profile not available",
       score,
       website: 'CodeChef',
-      leaderboardStats: {
-        globalRank: data.globalRank || "Global rank not available",
-        countryRank: data.countryRank || "Country rank not available",
-      },
     };
   }
   return null;
@@ -117,12 +106,8 @@ const fetchDataFromGitHub = async (username) => {
     return {
       name: data.name || "No name available",
       enrollmentNumber: username,
-      rank: "GitHub Profile",
       score,
       website: 'GitHub',
-      leaderboardStats: {
-        publicRepos: data.public_repos || 0,
-      },
     };
   }
   return null;
